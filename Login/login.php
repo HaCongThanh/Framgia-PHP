@@ -1,5 +1,7 @@
 <?php 
 
-	echo "Test";
+	echo "Test <br>";
+
+	echo "Ahihi <br>";
 
 ?>
