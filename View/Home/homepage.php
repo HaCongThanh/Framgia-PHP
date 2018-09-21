@@ -44,17 +44,9 @@
             </div>
 
             <?php 
-
             	if (isset($_COOKIE['msg'])) {
-
-            ?>
-
-            		<a href="#" class="logo" style="margin-left: 5%; color: black;"><font><?php echo $_COOKIE['msg']; ?></font></a>
-
-            <?php 
-
+            		echo $_COOKIE['msg'];
             	}
-
             ?>
 
             <div class="top-menu">

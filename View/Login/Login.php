@@ -18,13 +18,17 @@
   <body>
 	  <div id="login-page">
 	  	<div class="container">
-	  	
 		      <form role="form" class="form-login" action="" method="POST">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 		            <input type="email" name="email" class="form-control" placeholder="Email" autofocus required>
 		            <br>
 		            <input type="password" name="password" class="form-control" placeholder="Password" value="" required>
+		            <?php 
+		            	if (isset($_COOKIE['error'])) {
+		            		echo $_COOKIE['error'];
+		            	}
+		            ?>
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
@@ -69,9 +73,7 @@
 		                  </div>
 		              </div>
 		          </div>
-		          <!-- modal -->
-		      </form>	  	
-	  	
+		      </form>
 	  	</div>
 	  </div>
 

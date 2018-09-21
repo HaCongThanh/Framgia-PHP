@@ -3,10 +3,10 @@
 	include_once('Model.php');
 
 	/**
-	* Login
+	* Người dùng
 	*/
-	class home extends Model {
-		// public $table = "users";
+	class user extends Model {
+		public $table = "users";
 		
 		public function __construct(){
 			parent::__construct();
@@ -17,4 +17,4 @@
 		}
 	}
 
- ?>
+?>

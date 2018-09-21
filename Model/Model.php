@@ -18,7 +18,13 @@
 			$this->conn = $connection->conn;
 		}
 
+		public function findUser($obj, $data) {
+			$query = "SELECT * FROM $this->table WHERE $obj = '" . $data . "'";
 
+			$result = $this->conn->query($query);
+
+			return $result->fetch_assoc();
+		}
 
 
 

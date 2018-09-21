@@ -3,6 +3,7 @@
 	session_start();
 
 	include_once('Model/Login.php');
+	include_once('Model/User.php');
 
 	/**
 	* 
@@ -13,6 +14,7 @@
 		
 		public function __construct() {
 			$this->model = new login();
+			$this->modelUser = new user();
 		}
 
 		public function getUser() {
@@ -58,11 +60,16 @@
 					// 	setcookie('remember', "");
 					// }
 
-					setcookie('msg', 'Chào mừng ' . "<b>" . $email . "</b>" . ' quay trở lại Framgia - Education. Chúc bạn một ngày tốt lành!', time() + 15);
+					$obj = 'email';
+					$user = $this->modelUser->findUser($obj, $email);
+
+					setcookie('msg', '<a href="#" class="logo" style="margin-left: 5%; color: black;"><font>Chào mừng ' . "<b>" . $user['name'] . "</b>" . ' quay trở lại Framgia - Education. Chúc bạn một ngày tốt lành!</font></a>', time() + 15);
 
 	                header('Location: /index.php');
 				} else {
-					echo "<p style='text-align: center;'>Đăng nhập không thành công!<br>Sai địa chỉ email hoặc password.</p>";
+					setcookie('error', '<center><font style="color: red;"><b><br>Đăng nhập không thành công!<br>Sai địa chỉ Email hoặc Password.</b></font></center>', time() + 5);
+
+					header('Location: /index.php');
 				}
 			}				
 		}
