@@ -18,7 +18,7 @@
   <body>
 	  <div id="login-page">
 	  	<div class="container">
-		      <form role="form" class="form-login" action="" method="POST">
+		      <form role="form" class="form-login" action="index.php?module=login&act=login" method="POST">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 		            <input type="email" name="email" class="form-control" placeholder="Email" autofocus required>
@@ -47,14 +47,13 @@
 		            </div>
 		            <div class="registration">
 		                Don't have an account yet?<br/>
-		                <a class="" href="#">
+		                <a class="" href="index.php?module=login&act=create">
 		                    Create an account
 		                </a>
 		            </div>
 		        </div>
 		
-		          <!-- Modal -->
-		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		          <!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
 		              <div class="modal-dialog">
 		                  <div class="modal-content">
 		                      <div class="modal-header">
@@ -72,7 +71,7 @@
 		                      </div>
 		                  </div>
 		              </div>
-		          </div>
+		          </div> -->
 		      </form>
 	  	</div>
 	  </div>
