@@ -14,7 +14,12 @@
 		}
 
 		public function index() {
-			include_once('View/Home/homepage.php');
+			if (isset($_SESSION['login'])) {
+				include_once('View/Home/index.php');
+			} else {
+				header('Location: /index.php');
+			}
+			
 		}
 
 	}
